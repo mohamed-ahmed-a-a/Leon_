@@ -181,12 +181,6 @@ body{
     height: calc(100vh - 64px);
     position: relative;
 }
-.landing{
-    background-image: url(images/black_and_1534817744-1024x475.webp);
-}
-.landing{
-    background-image: url(/images/black_and_1534817744-1024x475.webp);
-}
 .landing .intro-text{
     position: absolute;
     left: 50%;
