@@ -14,6 +14,16 @@
 }
 /* End Varibles */
 
+i {
+    transition: transform 0.3s ease;
+    display: inline-block;
+    transform-origin: center; 
+}
+
+i:hover {
+    transform: rotate(15deg) scale(1.1);
+}
+
 /* Strat Global Rules  */
 
 
@@ -28,7 +38,7 @@ html{
     -webkit-scroll-behaviour:smooth;
 }
 body{
- font-family: 'Work Sans', sans-serif;
+    font-family: 'Work Sans', sans-serif;
 }
 
 .container{
@@ -94,6 +104,7 @@ body{
 
 .header .logo{
     width: 80px;
+    cursor: pointer;
 }
 .header .links{
     position: relative;
@@ -165,7 +176,7 @@ body{
 
 /* Start Landing Section */
 .landing{
-    background-image: url(../images/black_and_1534817744-1024x475.webp);
+    background-image: url(/images/background.png);
     background-size: cover;
     height: calc(100vh - 64px);
     position: relative;
@@ -187,10 +198,12 @@ body{
     font-weight: bold;
     font-size: 50px;
 }
+.landing .intro-text span{
+    color: var(--main-color);
+}
 .landing .intro-text p{
     font-size: 19px;
     line-height: 1.8;
-
 }
 
 /* End Landing Section */
@@ -234,7 +247,7 @@ body{
   }
   @media (max-width : 767px){
     .services .services-content .srv .text p{
-        margin-left: 140px;
+        margin-left: 40px;
     }
   }
 .services .services-content{
@@ -252,7 +265,10 @@ body{
     text-align: center;
     }
 }
-
+.col .image img:hover{
+    position: relative;
+    left: 15%;
+}
 .services .services-content .srv i{
     color: var(--main-color);
     flex-basis: 60px;
@@ -308,9 +324,18 @@ body{
 }   
 .portfolio .card{
     background-color: white;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    transition: all 0.5s ease;
+}
+.portfolio .card:hover{
+    transform: scale(1.1);
+    box-shadow: none;
 }
 .portfolio .card img{
     width: 100%;
+}
+.portfolio .card img:hover{
+    opacity: 0.7;
 }
 .portfolio .card .info{
     padding: 20px;
@@ -328,6 +353,16 @@ color: var(--third-color ,#333);
     .portfolio .card .info p{
         text-align: center;
     }
+    .portfolio .card{
+        width: 94%;
+        margin-left: 3%;
+    }
+    .portfolio .card:hover{
+        box-shadow: none;
+    }
+    .portfolio .card img:hover{
+        opacity: 0.7;
+    }
 }
 /* End Portfolio */
 
@@ -335,17 +370,24 @@ color: var(--third-color ,#333);
 .about {
     padding-top: var(--section-padding);
     padding-bottom: calc(var(--section-padding) + 60px);
-  }
-  .about .about-content {
-    margin-top: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+}
+.about img:hover{
+    opacity: 0.7;
+}
+.about .about-content {
+margin-top: 100px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
   @media (max-width: 991px) {
     .about .about-content {
       flex-direction: column;
       text-align: center;
+    }
+    .portfolio .card{
+        width: 91%;
+        margin-left: 4%;
     }
   }
   .about .about-content .image {
@@ -358,27 +400,27 @@ color: var(--third-color ,#333);
       margin: 0 auto 60px;
     }
   }
-  .about .about-content .image::before {
-    content: "";
-    position: absolute;
-    background-color: #ebeced;
-    width: 100px;
-    height: calc(100% + 80px);
-    top: -40px;
-    left: -20px;
-    z-index: -1;
-  }
-  .about .about-content .image::after{
-    content: "";
-    position: absolute;
-    width: 120px;
-    height: 300px;
-    border-left: 80px solid var(--main-color);
-    border-bottom: 80px solid var(--main-color);
-    top: -40px;
-    right: -150px;
-    z-index: -1;
-  }
+.about .about-content .image::before {
+content: "";
+position: absolute;
+background-color: #ebeced;
+width: 100px;
+height: calc(100% + 80px);
+top: -40px;
+left: -20px;
+z-index: -1;
+}
+.about .about-content .image::after{
+content: "";
+position: absolute;
+width: 120px;
+height: 300px;
+border-left: 80px solid var(--main-color);
+border-bottom: 80px solid var(--main-color);
+top: -40px;
+right: -150px;
+z-index: -1;
+}
   @media (max-width: 991px) {
     .about .about-content .image::before,
     .about .about-content .image::after {
@@ -416,6 +458,7 @@ color: var(--third-color ,#333);
 .register .special-heading {
     margin-left: -150px !important;
 }
+
 .register{
     padding-top: var(--section-padding);
     padding-bottom:var(--section-padding);
@@ -571,6 +614,10 @@ form hr {
     align-items: center;
     margin-top: 30px;
     font-size: 18px;
+}
+.contact .info .social a:hover{
+    opacity: 0.7;
+    transform: scale(1.1);
 }
 .contact .info .social i{
     margin-left: 10px;
